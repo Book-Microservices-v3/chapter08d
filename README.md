@@ -10,7 +10,7 @@ In this last part, we introduce Centralized Logs, Distributed Tracing, and Conta
 
 The figure below shows a high-level overview of the final version of our system.
 
-![Logical View - Chapter 8 (Final)](resources/microservice_patterns-Config-Server.png)
+![Logical View - Chapter 8 (Final)](resources/microservice_patterns-Config-Server-1.png)
 
 The main concepts included in this last part of the chapter are:
 

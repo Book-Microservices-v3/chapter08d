@@ -6,23 +6,9 @@
 	"image": "mcr.microsoft.com/devcontainers/java:1-17-bullseye",
 
 	"features": {
-		"ghcr.io/devcontainers/features/java:1": {
-			"version": "latest"
-		},
-		"ghcr.io/itsmechlark/features/rabbitmq-server:1": {
-			"version": "latest"
-		}, 
-		"ghcr.io/devcontainers/features/node:1":{
-			"nodeGypDependencies": true,
-			"version": "lts"
-		},
-		"ghcr.io/devcontainers/features/python:1": {
-			"installTools": true,
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers/features/go:1": {
-			"version": "latest"
-		}
+		"ghcr.io/devcontainers/features/java:1": {},
+		"ghcr.io/devcontainers/features/node:1":{},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -36,7 +22,8 @@
 		"vscode": {
 			"extensions": [
 				"vscjava.vscode-java-pack", 
-				"vmware.vscode-boot-dev-pack"
+				"vmware.vscode-boot-dev-pack", 
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	}

@@ -40,19 +40,26 @@ In case you want to learn how to build the images, keep reading the instructions
 First, build the application images with:
 
 ```bash
-$ ./mvnw spring-boot:build-image
+multiplication$ ./mvnw spring-boot:build-image
+gamification$ ./mvnw spring-boot:build-image
+gateway$ ./mvnw spring-boot:build-image
+logs$ ./mvnw spring-boot:build-image
 ```
 
 Then, build the consul importer from the `docker/consul` folder:
 
 ```bash
+$ consul agent -node=learnmicro -dev
+docker/consul$ consul kv export config/ > consul-kv-docker.json
 docker/consul$ docker build -t consul-importer:1.0 .
 ```
 
 And the UI server (first you have to build it with `npm run build`):
 
 ```bash
-challenges-frontend $ docker build -t challenges-frontend:1.0 .
+challenges-frontend$ npm install
+challenges-frontend$ npm run build
+challenges-frontend$ docker build -t challenges-frontend:1.0 .
 ```
 
 Once you have all the images ready, run:

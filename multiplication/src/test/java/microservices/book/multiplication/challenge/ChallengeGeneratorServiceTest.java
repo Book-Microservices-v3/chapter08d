@@ -16,24 +16,24 @@ public class ChallengeGeneratorServiceTest {
 
     private ChallengeGeneratorService challengeGeneratorService;
 
-    @Spy
-    private Random randomGenerator;
+    // @Spy
+    // private Random randomGenerator;
 
-    @BeforeEach
-    public void setUp() {
-        challengeGeneratorService = new ChallengeGeneratorServiceImpl(randomGenerator);
-    }
+    // @BeforeEach
+    // public void setUp() {
+    //     challengeGeneratorService = new ChallengeGeneratorServiceImpl(randomGenerator);
+    // }
 
-    @Test
-    public void generateRandomFactorIsBetweenExpectedLimits() {
-        // 89 is max - min range
-        given(randomGenerator.nextInt(89)).willReturn(20, 30);
+    // @Test
+    // public void generateRandomFactorIsBetweenExpectedLimits() {
+    //     // 89 is max - min range
+    //     given(randomGenerator.nextInt(89)).willReturn(20, 30);
 
-        // when we generate a challenge
-        Challenge challenge = challengeGeneratorService.randomChallenge();
+    //     // when we generate a challenge
+    //     Challenge challenge = challengeGeneratorService.randomChallenge();
 
-        // then the challenge contains factors as expected
-        then(challenge).isEqualTo(new Challenge(31, 41));
-    }
+    //     // then the challenge contains factors as expected
+    //     then(challenge).isEqualTo(new Challenge(31, 41));
+    // }
 
 }

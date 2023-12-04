@@ -19,7 +19,7 @@ spring:
         - id: multiplication
           uri: lb://multiplication/
           predicates:
-            - Path=/challenges/**,/attempts,/attempts/**,/users/**
+            - Path=/challenges/**,/attempts/**,/users/**
         - id: gamification
           uri: lb://gamification/
           predicates:
@@ -41,5 +41,5 @@ spring:
             methods: GET,POST
 # Uncomment the configuration below if you want to enable route matching logs
 #logging:
-#  level:
-#    org.springframework.cloud.gateway.handler.predicate: trace
+  #  level:
+    #    org.springframework.cloud.gateway.handler.predicate: trace

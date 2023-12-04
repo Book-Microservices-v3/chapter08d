@@ -2,23 +2,18 @@ server:
   port: 8000
 
 spring:
-  config:
-    import:
-      optional:consul:
   application:
     name: gateway
   cloud:
     loadbalancer:
       ribbon:
-        # Not needed since we excluded the dependency, but
-        # still good to add it here for better readability
+        # Not needed since we excluded the dependency
         enabled: false
     consul:
       enabled: true
       discovery:
         # Get only services that are passing the health check
         query-passing: true
-
     gateway:
       routes:
         - id: multiplication
@@ -30,23 +25,21 @@ spring:
           predicates:
             - Path=/leaders
       globalcors:
-          cors-configurations:
-            '[/**]':
-              allowedOrigins: "http://localhost:3000"
-              allowedHeaders: "*"
-              allowedMethods:
-                - "GET"
-                - "POST"
-                - "OPTIONS"
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedHeaders:
+              - "*"
+            allowedMethods:
+              - "GET"
+              - "POST"
+              - "OPTIONS"
       default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
         - name: Retry
           args:
             retries: 3
             methods: GET,POST
-
-
 # Uncomment the configuration below if you want to enable route matching logs
-logging:
-  level:
-    org.springframework.cloud.gateway.handler.predicate: trace
+#logging:
+#  level:
+#    org.springframework.cloud.gateway.handler.predicate: trace

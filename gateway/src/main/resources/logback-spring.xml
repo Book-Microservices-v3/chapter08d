@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
@@ -11,7 +12,7 @@
             <pattern>%d{HH:mm:ss.SSS} [%t] %logger{36} - %msg</pattern>
         </layout>
 
-        <applicationId>multiplication</applicationId>
+        <applicationId>gateway</applicationId>
         <host>${rabbitMQHost:-localhost}</host>
         <routingKeyPattern>%property{applicationId}.%p</routingKeyPattern>
         <exchangeName>logs.topic</exchangeName>
